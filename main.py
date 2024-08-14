@@ -36,12 +36,12 @@ def port_scanner(target_ip):
 
             result = sock.connect_ex((target_ip, port))
             if result == 0:
-                print(f"{Fore.GREEN}{target_ip}:{port}{Style.RESET_ALL}")
+                print(f"{Fore.GREEN}✔{Fore.LIGHTBLACK_EX} ┃ {Fore.WHITE}{target_ip}:{port}{Style.RESET_ALL}")
 
                 with open(f"{directory}/{port}.txt", "w") as file:
                     file.write(f"{target_ip}:{port}\n")
             else:
-                print(f"{Fore.RED}{target_ip}:{port}{Style.RESET_ALL}")
+                print(f"{Fore.RED}✘{Fore.LIGHTBLACK_EX} ┃ {Fore.WHITE}{target_ip}:{port}{Style.RESET_ALL}")
 
             sock.close()
 
@@ -50,6 +50,7 @@ def port_scanner(target_ip):
 
 target_ip = input("Ip addres: ")
 protocol = input("Select a scan protocol (TCP / UDP): ")
-time.sleep(1)
+print("")
+time.sleep(2)
 
 check_protocol(protocol)

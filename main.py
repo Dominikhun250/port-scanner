@@ -43,7 +43,6 @@ def port_scanner(target_ip):
             else:
                 print(f"{Fore.RED}{target_ip}:{port}{Style.RESET_ALL}")
 
-            end_close = input(" ")
             sock.close()
 
     except Exception as e:
@@ -52,4 +51,5 @@ def port_scanner(target_ip):
 target_ip = input("Ip addres: ")
 protocol = input("Select a scan protocol (TCP / UDP): ")
 time.sleep(1)
+
 check_protocol(protocol)

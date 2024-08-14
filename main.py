@@ -51,6 +51,5 @@ def port_scanner(target_ip):
 
 target_ip = input("Ip addres: ")
 protocol = input("Select a scan protocol (TCP / UDP): ")
-time.sleep(2)
-os.system("cls")
+time.sleep(1)
 check_protocol(protocol)
